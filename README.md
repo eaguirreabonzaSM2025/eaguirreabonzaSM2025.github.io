@@ -3,6 +3,6 @@
 # This is my school GitHub account
 # This repository has my assignments for this course
 
-##About Me
+##About Me  
 * ## Who I Am
 * ## Interests
