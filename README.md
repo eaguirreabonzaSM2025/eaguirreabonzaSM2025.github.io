@@ -8,3 +8,7 @@
 	* My Name is Ernesto, I am from Raleigh, North Carolina. I am in the associates program for Engineering. I plan to transfer to NC State in Electrical Engineering or Computer Science.  
 	* I like work out and run as my main hobbies. I like to watch movies (any type preferably action, thriller, horror, just any). I like to learn about computers, 3 years ago I built my first PC. Ever since then I just been upgrading certain parts like the CPU, fans (better ones), and eventually the GPU.
 * ## Websites I Recommend
+	*
+	*[PC Part Picker] I recommend this website for you are interested in making your own pc. It helps you make sure you have the right combination of parts, so that you don't accidently buy the wrong one. For example: you want the right CPU that can fit in your motherboard. It includes a lot like total wattage, narrows down parts, the total cost of parts, links to part, etc..
+
+[PC Part Picker]: (https://pcpartpicker.com/)
