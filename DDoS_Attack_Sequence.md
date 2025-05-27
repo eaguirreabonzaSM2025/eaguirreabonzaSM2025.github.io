@@ -1,11 +1,9 @@
 ```mermaid
 sequenceDiagram
-	box rgb (255,97,97) 
-		Attacker & BotNet
-	end
+	box transparent Red Attacker & BotNet
 	participant Attacker
 	participant BotNet
-	
+	end
 
 	participant Firewall
 	participant WebServer
