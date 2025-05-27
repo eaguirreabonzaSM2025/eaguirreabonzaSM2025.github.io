@@ -1,6 +1,6 @@
 ```mermaid
 sequenceDiagram
-	rect rgb(200, 150, 255) Attacker & BotNet Plans
+	box Red Attacker & BotNet Plans
 	participant Attacker
 	participant BotNet
 	end
