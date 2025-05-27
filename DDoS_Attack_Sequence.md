@@ -4,10 +4,10 @@ sequenceDiagram
 	participant Attacker
 	participant BotNet
 	end
-
+	box WebService's
 	participant Firewall
 	participant WebServer
-	
+	end
 	
 	Note over Attacker: creates multiple devices (BotNet)
 	Attacker->>BotNet: instructs the Botnet to flood a WebServer
