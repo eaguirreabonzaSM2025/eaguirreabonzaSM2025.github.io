@@ -11,6 +11,7 @@ sequenceDiagram
 	Note over WebServer: Users sees "504 Gateway Timeout"
 
 	
-	Note over Firewall: detected suspicious activity!
-	Firewall->>BotNet: actively trying to block requests, but is overwhelmed
+	Note over Firewall: detected increase of traffic patterns with abnormal packet sizes
+	Firewall->>BotNet: actively trying to block requests using the devices IP address, is overwhelmed
 	
+	Note over WebServer: WebServer is now implementing Rate Limiting to prevent another DDOS attack
