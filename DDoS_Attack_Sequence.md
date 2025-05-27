@@ -10,4 +10,5 @@ sequenceDiagram
 
 	
 	Note over Firewall: detected suspicious activity!
-	Firewall->>BotNet: actively trying to block requests
+	Firewall->>BotNet: actively trying to block requests, but is overwhelmed
+	Note over WebServer: Users sees "504 Gateway Timeout"
