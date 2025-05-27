@@ -9,5 +9,5 @@ sequenceDiagram
 	BotNet->>WebServer: located the WebServer's website there's massive amount of traffic
 
 	
-	Note right of Firewall: detected suspicious activity!
+	Note over Firewall: detected suspicious activity!
 	Firewall->>BotNet: actively trying to block requests
