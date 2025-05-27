@@ -1,10 +1,13 @@
 ```mermaid
 sequenceDiagram
+	box Red Attacker & BotNet
 	participant Attacker
 	participant BotNet
+	end
+
 	participant Firewall
 	participant WebServer
-	box Red Attacker & BotNet
+	
 	
 	Note over Attacker: creates multiple devices (BotNet)
 	Attacker->>BotNet: instructs the Botnet to flood a WebServer
