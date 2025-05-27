@@ -1,6 +1,6 @@
 ```mermaid
 sequenceDiagram
-	box Red Attacker & BotNet Plans
+	rect rgb(200, 150, 255) Attacker & BotNet Plans
 	participant Attacker
 	participant BotNet
 	end
@@ -18,5 +18,4 @@ sequenceDiagram
 	Note over Firewall: detected increase of traffic patterns with abnormal packet sizes!
 	Firewall->>BotNet: actively trying to block requests using the devices IP address, is overwhelmed
 	
-	Note over WebServer: WebServer is now implementing "Rate Limiting" to prevent another DDOS attack 
-	by reducing the number of requests from each user
+	Note over WebServer: WebServer is now implementing "Rate Limiting" to prevent another DDOS attack
