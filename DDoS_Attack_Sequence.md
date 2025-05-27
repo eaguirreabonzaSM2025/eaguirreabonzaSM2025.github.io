@@ -1,6 +1,6 @@
 ```mermaid
 sequenceDiagram
-	box LightRed Attacker & BotNet
+	box #f3e8ff Attacker & BotNet
 	participant Attacker
 	participant BotNet
 	end
