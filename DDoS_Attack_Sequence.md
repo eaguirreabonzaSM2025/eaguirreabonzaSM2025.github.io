@@ -9,3 +9,4 @@ sequenceDiagram
 
 	participant Firewall
 	Note right of Firewall: detected suspicious activity!
+	Firewall->>WebServer: actively trying to block requests
