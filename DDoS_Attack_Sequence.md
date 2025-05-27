@@ -16,6 +16,6 @@ sequenceDiagram
 
 	
 	Note over Firewall: detected increase of traffic patterns with abnormal packet sizes!
-	Firewall->>BotNet: actively trying to block requests using the devices IP address, is overwhelmed
+	Firewall<<->>BotNet: actively trying to block requests using the devices IP address, while BotNet still continues
 	
 	Note over WebServer: WebServer is now implementing "Rate Limiting" to prevent another DDOS attack
