@@ -5,4 +5,5 @@ sequenceDiagram
 	participant WebServer
 	participant Firewall
 
-	Attacker->>BotNet: Create multiple requests to send to a webserver
+	Attacker->>BotNet: creates multiple devices (BotNet) to flood a WebServer
+	BotNet->>WebServer: located the WebServer's website, is now there's massive amount of traffic
