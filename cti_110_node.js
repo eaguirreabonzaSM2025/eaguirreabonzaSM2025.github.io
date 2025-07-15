@@ -1,3 +1,4 @@
+console.log("Server script is using Ernesto's_gradebook.html");
 
 // This section loads modules.  It loads the Express server and stores
 // it in "express", then creates a application, a router, and a path handler
