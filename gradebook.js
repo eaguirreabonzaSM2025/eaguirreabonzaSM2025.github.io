@@ -26,7 +26,7 @@ function fetchGradeData() {
 function populateGradebook(data) {
     console.log("Got data:", data);
 
-    var table = document.getElementById("gradebook");
+    var table = document.getElementById("gradebook").getElementsByTagName("tbody")[0];
 
     for (var i = 0; i < data.length; i++) {
         var row = document.createElement("tr");
