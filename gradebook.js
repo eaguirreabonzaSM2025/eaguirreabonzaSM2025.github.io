@@ -6,7 +6,7 @@ function fetchGradeData() {
     console.log("Fetching grade data...");
 
     var xhr = new XMLHttpRequest();
-    var url = "/api/grades";
+    let apiRoute = "/api/grades";
 
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
@@ -24,24 +24,26 @@ function fetchGradeData() {
 }
 
 function populateGradebook(data) {
-    console.log("Got data:", data);
+    console.log("Populating gradebook with data", data);
 
-    var table = document.getElementById("gradebook").getElementsByTagName("tbody")[0];
+    let tableElm = document.getElementById("gradebook").getElementsByTagName("tbody")[0];
 
-    for (var i = 0; i < data.length; i++) {
-        var row = document.createElement("tr");
+      data.forEach(function(assigment){
+        let row = document.createElement("tr");
+	let columns = [];
+	columns.name = document.createElement('td');
+	columns.name.appendChild(
+	    document.createTextNode(assigment.last_name + ", " + assignment.first_name)
+	);
+       	columns.grade = document.createElement('td');
+	columns.grade.apprendChild(
+	    document.createTextNode(assigment.total_grade)
+	);
 
-        var nameTd = document.createElement("td");
-        var fullName = data[i].last_name + ", " + data[i].first_name;
-        nameTd.textContent = fullName;
+        row.appendChild(columns.name);
+        row.appendChild(columns.grade);
 
-        var gradeTd = document.createElement("td");
-        gradeTd.textContent = data[i].total_grade;
-
-        row.appendChild(nameTd);
-        row.appendChild(gradeTd);
-
-        table.appendChild(row);
+        tableElm.appendChild(row);
     }
 }
 
