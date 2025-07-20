@@ -16,7 +16,8 @@ function fetchGradeData() {
 	    }
 	    populateGradebook(JSON.parse(xhr.responseText));
 	    }
-    }.bind(this);
+}.bind(this);
+
     xhr.open("GET", apiRoute, true);
     xhr.send();
 }
