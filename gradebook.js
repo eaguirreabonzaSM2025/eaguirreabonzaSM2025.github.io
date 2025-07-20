@@ -2,48 +2,49 @@ js
 
 "use strict";
 
-async function fetchGradeData() {
-  console.log("Getting grade data...");
+function fetchGradeData() {
+    console.log("Fetching grade data...");
 
-  let xhr = new XMLHttpRequest();
-  let apiRoute = "/api/grades";
+    var xhr = new XMLHttpRequest();
+    var url = "/api/grades";
 
-  xhr.onreadystatechange = function () {
-	if (xhr.readyState === xhr.DONE) {
-	    if (xhr.status !== 200){
-		console.error('Could not get grades. Status: $(xhr.status}');
-		return;
-	    }
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var data = JSON.parse(xhr.responseText);
+                populateGradebook(data);
+            } else {
+                console.log("Error getting grades. Status code:", xhr.status);
+            }
+        }
+    };
 
-	    const data = JSON.parse(xhr.responseText);
-	    populateGradebook(data);
-	}
- }.bind(this);
-
- xhr.open("get", apiRoute, true);
- xhr.send();
-
-}
- function populateGradebook(data) {
-    console.log("Filling table with:", data);
-    const tableBody = document.getElementById("gradebook-body");
-    tableBody.innerHTML = "";
-
-    data.forEach(student => {
-        const row = document.createElement("tr");
-
-        const nameCell = document.createElement("td");
-        nameCell.textContent = student.name;
-
-        const gradeCell = document.createElement("td");
-        gradeCell.textContent = student.grade;
-
-        row.appendChild(nameCell);
-        row.appendChild(gradeCell);
-        tableBody.appendChild(row);
-    });
+    xhr.open("GET", url, true);
+    xhr.send();
 }
 
- document.addEventListener("DOMContentLoaded", function () {
+function populateGradebook(data) {
+    console.log("Got data:", data);
+
+    var table = document.getElementById("gradebook");
+
+    for (var i = 0; i < data.length; i++) {
+        var row = document.createElement("tr");
+
+        var nameTd = document.createElement("td");
+        var fullName = data[i].last_name + ", " + data[i].first_name;
+        nameTd.textContent = fullName;
+
+        var gradeTd = document.createElement("td");
+        gradeTd.textContent = data[i].total_grade;
+
+        row.appendChild(nameTd);
+        row.appendChild(gradeTd);
+
+        table.appendChild(row);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
     fetchGradeData();
 });
