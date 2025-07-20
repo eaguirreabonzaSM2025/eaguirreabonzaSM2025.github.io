@@ -21,28 +21,32 @@ function fetchGradeData() {
 }
 
 function populateGradebook(data) {
-    console.log("Populating gradebook with data", data);
+  console.log("Populating gradebook with data", data);
 
-    let tableElm = document.getElementById("gradebook").getElementsByTagName("tbody")[0];
+  let tableElm = document.getElementById("gradebook").getElementsByTagName("tbody")[0];
 
-      data.forEach(function(assigment){
-        let row = document.createElement("tr");
-	let columns = [];
-	columns.grade = document.createElement('td');
-	columns.grade.appendChild(
-  	    document.createTextNode(assignment.total_grade)
-	);
+  data.forEach(function (assignment) {
+    let row = document.createElement("tr");
+    let columns = {};
 
-       	columns.grade = document.createElement('td');
-	columns.grade.appendChild(
-            document.createTextNode(assignment.total_grade)
-	);
+    // Student name column
+    columns.name = document.createElement("td");
+    columns.name.appendChild(
+      document.createTextNode(assignment.last_name + ", " + assignment.first_name)
+    );
 
-        row.appendChild(columns.name);
-        row.appendChild(columns.grade);
+    // Grade column
+    columns.grade = document.createElement("td");
+    columns.grade.appendChild(
+      document.createTextNode(assignment.total_grade)
+    );
 
-        tableElm.appendChild(row);
+    row.appendChild(columns.name);
+    row.appendChild(columns.grade);
+    tableElm.appendChild(row);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   fetchGradeData();
-}); 
+});
