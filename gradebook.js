@@ -44,4 +44,5 @@ function populateGradebook(data) {
         tableElm.appendChild(row);
 
 document.addEventListener("DOMContentLoaded", function () {
-    fetchGradeData();
+  fetchGradeData();
+}); 
