@@ -9,17 +9,15 @@ function fetchGradeData() {
     let apiRoute = "/api/grades";
 
     xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
+        if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200) {
-                var data = JSON.parse(xhr.responseText);
-                populateGradebook(data);
-            } else {
-                console.log("Error getting grades. Status code:", xhr.status);
-            }
-        }
-    };
-
-    xhr.open("GET", url, true);
+               console.error('Could not get grades.
+		 Status: ${xhr.status}');
+	    }
+	    populateGradebook(JSON.parse(xhr.responseText));
+	    }
+    }.bind(this);
+    xhr.open("GET", apiRoute, true);
     xhr.send();
 }
 
