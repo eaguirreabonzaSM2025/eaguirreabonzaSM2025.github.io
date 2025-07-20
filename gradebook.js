@@ -38,8 +38,6 @@ function populateGradebook(data) {
             document.createTextNode(assignment.total_grade)
 	);
 
-	);
-
         row.appendChild(columns.name);
         row.appendChild(columns.grade);
 
