@@ -33,8 +33,10 @@ function populateGradebook(data) {
 	    document.createTextNode(assigment.last_name + ", " + assignment.first_name)
 	);
        	columns.grade = document.createElement('td');
-	columns.grade.apprendChild(
-	    document.createTextNode(assigment.total_grade)
+	columns.grade.appendChild(
+            document.createTextNode(assignment.total_grade)
+	);
+
 	);
 
         row.appendChild(columns.name);
