@@ -28,9 +28,11 @@ function populateGradebook(data) {
       data.forEach(function(assigment){
         let row = document.createElement("tr");
 	let columns = [];
-	columns.name = document.createElement('td');
+	columns.grade = document.createElement('td');
 	columns.grade.appendChild(
-            document.createTextNode(assignment.total_grade)
+  	    document.createTextNode(assignment.total_grade)
+	);
+
 	);
 
        	columns.grade = document.createElement('td');
