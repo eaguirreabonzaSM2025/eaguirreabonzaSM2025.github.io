@@ -46,3 +46,5 @@ function populateGradebook(data) {
 document.addEventListener("DOMContentLoaded", function () {
   fetchGradeData();
 }); 
+
+}
