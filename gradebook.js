@@ -38,3 +38,5 @@ function populateGradebook(data) {
         row.appendChild(columns.grade);
 
         tableElm.appendChild(row);
+  });
+}
